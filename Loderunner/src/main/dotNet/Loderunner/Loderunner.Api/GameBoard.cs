@@ -55,7 +55,7 @@ namespace Loderunner.Api
                     .Concat(FindAllElements(BoardElement.HeroLeft))
                     .Concat(FindAllElements(BoardElement.HeroRight))
                     .Concat(FindAllElements(BoardElement.HeroPipeLeft))
-                    .Concat(FindAllElements(BoardElement.HeropipeRight))
+                    .Concat(FindAllElements(BoardElement.HeroPipeRight))
                     .Single();
             }
         }
@@ -70,9 +70,12 @@ namespace Loderunner.Api
 
         public List<BoardPoint> GetOtherHeroesPositions()
         {
-            return FindAllElements(BoardElement.OtherLoderunner)
-                .Concat(FindAllElements(BoardElement.OtherBombLoderunner))
-                .Concat(FindAllElements(BoardElement.OtherDeadLoderunner))
+            return FindAllElements(BoardElement.OtherHeroDie)
+                .Concat(FindAllElements(BoardElement.OtherHeroLeft))
+                .Concat(FindAllElements(BoardElement.OtherHeroRight))
+                .Concat(FindAllElements(BoardElement.OtherHeroLadder))
+                .Concat(FindAllElements(BoardElement.OtherHeroPipeLeft))
+                .Concat(FindAllElements(BoardElement.OtherHeroPipeRight))
                 .ToList();
         }
 
@@ -129,12 +132,12 @@ namespace Loderunner.Api
 
         public List<BoardPoint> GetOtherHeroPositions()
                 {
-            return FindAllElements(BoardElement.OtherHeroLadder)
+            return FindAllElements(BoardElement.OtherHeroDie)
                 .Concat(FindAllElements(BoardElement.OtherHeroLeft))
+                .Concat(FindAllElements(BoardElement.OtherHeroRight))
+                .Concat(FindAllElements(BoardElement.OtherHeroLadder))
                 .Concat(FindAllElements(BoardElement.OtherHeroPipeLeft))
                 .Concat(FindAllElements(BoardElement.OtherHeroPipeRight))
-                .Concat(FindAllElements(BoardElement.OtherHeroRight))
-                .Concat(FindAllElements(BoardElement.OtherHeroPit))
                 .ToList();
         }
 
