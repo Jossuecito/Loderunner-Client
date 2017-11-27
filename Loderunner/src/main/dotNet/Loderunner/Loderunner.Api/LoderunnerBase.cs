@@ -25,7 +25,7 @@ namespace Loderunner.Api
 {
     public abstract class LoderunnerBase
     {
-        protected readonly string Server = @"ws://tetrisj.jvmhost.net:12270/codenjoy-contest/ws";
+        protected readonly string Server = @"ws://epam-challenge.lou.bet:8080/codenjoy-contest/ws/codenjoy-contest/ws";
         private const string ResponsePrefix = "board=";
 
         public LoderunnerBase(string userName)

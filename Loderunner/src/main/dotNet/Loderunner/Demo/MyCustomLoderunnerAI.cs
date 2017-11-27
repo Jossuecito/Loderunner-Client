@@ -43,7 +43,7 @@ namespace Demo
             Console.SetCursorPosition(0, 0);
             gameBoard.PrintBoard();
 
-			return LoderunnerActionToString(LoderunnerAction.GoDown);
+			return LoderunnerActionToString(LoderunnerAction.GoRight);
         }
 
         /// <summary>

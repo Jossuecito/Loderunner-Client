@@ -29,7 +29,7 @@ namespace Demo
         static void Main(string[] args)
         {
             // creating custom loderunner's Ai client
-            var bot = new MyCustomLoderunnerAI("ApiDotNet");
+            var bot = new MyCustomLoderunnerAI("gabriel_garcia@epam.com");
             
             // starting thread with playing loderunner
             (new Thread(bot.Play)).Start();
@@ -38,7 +38,7 @@ namespace Demo
             Console.ReadKey();
 
             // on "anykey" - asking loderunner's Ai client to stop. 
-            bot.InitiateExit();
+             bot.InitiateExit();
         }
     }
 }
