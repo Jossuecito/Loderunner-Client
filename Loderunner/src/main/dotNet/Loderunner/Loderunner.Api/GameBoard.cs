@@ -68,13 +68,16 @@ namespace Loderunner.Api
             }
         }
 
-        //public List<BoardPoint> GetOtherHeroesPositions()
-        //{
-        //    return FindAllElements(BoardElement.OtherLoderunner)
-        //        .Concat(FindAllElements(BoardElement.OtherBombLoderunner))
-        //        .Concat(FindAllElements(BoardElement.OtherDeadLoderunner))
-        //        .ToList();
-        //}
+        public List<BoardPoint> GetOtherHeroesPositions()
+        {
+            return FindAllElements(BoardElement.OtherHeroDie)
+                .Concat(FindAllElements(BoardElement.OtherHeroLeft))
+                .Concat(FindAllElements(BoardElement.OtherHeroRight))
+                .Concat(FindAllElements(BoardElement.OtherHeroLadder))
+                .Concat(FindAllElements(BoardElement.OtherHeroPipeLeft))
+                .Concat(FindAllElements(BoardElement.OtherHeroPipeRight))
+                .ToList();
+        }
 
         public bool HasElementAt(BoardPoint point, BoardElement element)
         {
@@ -129,11 +132,14 @@ namespace Loderunner.Api
 
         public List<BoardPoint> GetOtherHeroPositions()
                 {
-            return FindAllElements(BoardElement.OtherHeroLadder)
+            return FindAllElements(BoardElement.OtherHeroDie)
                 .Concat(FindAllElements(BoardElement.OtherHeroLeft))
+                .Concat(FindAllElements(BoardElement.OtherHeroRight))
+                .Concat(FindAllElements(BoardElement.OtherHeroLadder))
                 .Concat(FindAllElements(BoardElement.OtherHeroPipeLeft))
                 .Concat(FindAllElements(BoardElement.OtherHeroPipeRight))
                 .Concat(FindAllElements(BoardElement.OtherHeroRight))
+                .Concat(FindAllElements(BoardElement.OtherHeroPit))
                 .ToList();
         }
 
